@@ -18,4 +18,8 @@ public class Student {
     private String lastName;
 
     private Map<String, Integer> scores = new HashMap<>();
+
+    public boolean addScore(String subject, Integer score) {
+        return scores.put(subject, score) == null;
+    }
 }
