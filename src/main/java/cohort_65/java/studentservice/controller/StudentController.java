@@ -35,7 +35,6 @@ public class StudentController {
         return studentService.updateStudent(updateStudent, id);
     }
 
-    // ⭐ Advanced endpoints
 
     @PutMapping("/score/student/{id}")
     public Boolean addScore(@PathVariable int id, @RequestBody ScoreDto scoreDto) {

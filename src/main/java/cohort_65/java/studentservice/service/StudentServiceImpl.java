@@ -49,8 +49,12 @@ public class StudentServiceImpl implements StudentService {
     public StudentDto updateStudent(UpdateStudentDto updateStudent, int id) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(StudentNotFoundException::new);
-        student.setFirstName(updateStudent.getFirstName());
-        student.setLastName(updateStudent.getLastName());
+        if (updateStudent.getFirstName() != null) {
+            student.setFirstName(updateStudent.getFirstName());
+        }
+        if (updateStudent.getLastName() != null) {
+            student.setLastName(updateStudent.getLastName());
+        }
         studentRepository.save(student);
         return new StudentDto(student.getId(), student.getFirstName(), student.getLastName());
     }

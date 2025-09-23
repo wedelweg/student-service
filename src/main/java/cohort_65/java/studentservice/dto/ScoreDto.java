@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ScoreDto {
-    private String exam;   // название экзамена
-    private Integer score; // балл
+    private String exam;
+    private Integer score;
 }
